@@ -22,7 +22,7 @@ RUN apt-get install --yes nodejs
 COPY config/*  /tmp/
 
 RUN mv /tmp/package.json /package.json
-RUN mv /tmp/sample.js /sample.js
+
 
 
 RUN npm install --save angular
@@ -30,16 +30,16 @@ RUN node -v
 RUN npm -v
 RUN npm i -g nodemon
 RUN nodemon -v
-#RUN apt-get statement DEBIAN_FRONTEND=noninteractive
+RUN apt-get statement DEBIAN_FRONTEND=noninteractive
 
-RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys B97B0AFCAA1A47F044F244A07FCC7D46ACCC4CF8
+
 RUN echo "deb http://apt.postgresql.org/pub/repos/apt/ precise-pgdg main" > /etc/apt/sources.list.d/pgdg.list
 RUN apt-get update && apt-get -y -q install python-software-properties software-properties-common
 RUN apt-get -y -f install postgresql postgresql-client postgresql-contrib
 #RUN pg_createcluster -u postgres
 USER postgres
 
-#RUN pg_createcluster 9.3 main --start
+
 RUN /etc/init.d/postgresql start \
     && psql --command "CREATE USER pguser WITH SUPERUSER PASSWORD 'pguser';" \
     && createdb -O pguser
