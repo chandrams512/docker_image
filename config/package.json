@@ -1,0 +1,17 @@
+{
+  "dependencies": {},
+  "name": "awsnodesample",
+  "description": "A simple Node.js application showing usage of Node.js.",
+  "version": "1.0.1",
+  "main": "sample.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+"repository": {
+    "type": "git",
+    "url": "https://github.com/ashleygwilliams/my_package.git"
+  },
+  "author": "NAME",
+  "license": "ISC"
+}
