@@ -1,1 +1,1 @@
-# docker_image
+Installing and Running NODEJS,ANGULARJS AND POSTGRES
