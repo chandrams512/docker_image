@@ -1,6 +1,9 @@
 FROM ubuntu:16.04
 
-
+ENV JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64
+ 
+# install packages
+RUN apt-get update && apt-get install -y openjdk-8-jdk
 RUN echo "NODE_ENV=development" >> /etc/environment
 RUN more "/etc/environment"
 RUN apt-get autoclean
@@ -27,6 +30,7 @@ RUN npm -v
 RUN npm i -g nodemon
 RUN nodemon -v
 
+#Install postgres
 
 RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys B97B0AFCAA1A47F044F244A07FCC7D46ACCC4CF8
 RUN echo "deb http://apt.postgresql.org/pub/repos/apt/ precise-pgdg main" > /etc/apt/sources.list.d/pgdg.list
