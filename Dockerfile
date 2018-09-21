@@ -2,8 +2,11 @@ FROM ubuntu:16.04
 
 ENV JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64
  
-# install packages
+# Install Java and Python
 RUN apt-get update && apt-get install -y openjdk-8-jdk
+RUN apt-get install python -y
+
+#Install Packages
 RUN echo "NODE_ENV=development" >> /etc/environment
 RUN more "/etc/environment"
 RUN apt-get autoclean
