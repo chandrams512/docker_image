@@ -2,12 +2,13 @@ In Docker Installing and Running
 
 JAVA 
 
+PYTHON
 
 NODEJS
 
-
 ANGULARJS
 
+LOGSTASH
 
 POSTGRES
 
