@@ -10,7 +10,7 @@ RUN apt-get autoclean
 RUN apt-get update
 RUN apt-get upgrade -y
 RUN apt-get dist-upgrade -y
-RUN apt-get install sudo curl htop git zip nano ncdu build-essential chrpath libssl-dev libxft-dev pkg-config glib2.0-dev libexpat1-dev gobject-introspection python-gi$
+RUN apt-get install tar sudo curl htop git zip nano ncdu build-essential chrpath libssl-dev libxft-dev pkg-config glib2.0-dev libexpat1-dev gobject-introspection python-gi$
 
 
 # Install Node.js
@@ -32,6 +32,10 @@ RUN nodemon -v
 
 #Install Logstash
 
+RUN curl -fL https://download.elastic.co/logstash/logstash/logstash-1.5.4.tar.gz | tar xzf - -C /opt && \
+mv /opt/logstash-1.5.4 /opt/logstash
+
+ENV PATH /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/logstash/bin
 
 #Install postgres
 
