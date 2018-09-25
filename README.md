@@ -16,7 +16,7 @@
 Here the base Os is Ubuntu 16.04 and JAVA version 1.8
 
 * after local setup and deploy project on Local browser.
-  Copy DockerNodeJS project into Docker Config folder with same Repository Name.
+  Copy DockerNodeJS project into Docker Config folder with the same Repository Name.
 
 * after successful build Docker.
 ```
