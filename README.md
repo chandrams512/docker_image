@@ -37,7 +37,7 @@ After successful creation of container,write these command in container
  step 2- apt-get install sudo.
  step 3- sudo -u postgres psql.
  step 4- ALTER USER postgres PASSWORD 'root';
- step 5- '\q' for exit from postgres database cmd.
+ step 5- 'ctrl+d' for exit from postgres database cmd.
  keep database name postgres in all place
 ```
 
