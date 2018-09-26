@@ -1,5 +1,7 @@
 * In Docker Installing and Running 
 ```
+  GIT
+  
   JAVA 
 
   PYTHON
@@ -14,7 +16,6 @@
   
   AWS CLI
   
-  GIT
 ```
 
 Here the base Os is Ubuntu 16.04 and JAVA version 1.8
