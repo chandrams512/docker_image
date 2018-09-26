@@ -20,9 +20,12 @@ RUN apt-get install -y openjdk-8-jdk
 
 #Install Python
 
-RUN apt-get update && \
-    apt-get install -y python python-dev python3-pip python-virtualenv && \
-    rm -rf /var/lib/apt/lists/*
+RUN apt-get update \
+  && apt-get install -y python3-pip python3-dev \
+  && cd /usr/local/bin \
+  && ln -s /usr/bin/python3 python \
+  && pip3 install --upgrade pip
+
 
 #Install Spark
 RUN wget http://www-eu.apache.org/dist/spark/spark-2.3.1/spark-2.3.1-bin-hadoop2.7.tgz && \
