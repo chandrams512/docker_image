@@ -20,6 +20,22 @@
 
 Here the base Os is Ubuntu 16.04 and JAVA version 1.8
 
+* Steps to install Docker Ubuntu System.
+  
+```
+   step 1 - login with Administrator using 
+        sudo -i 
+        using system password.
+   step 2 - create folder in root and paste dockerfile and  config folder of docker system.
+         mkdir foldername - cmd for creating folder.
+   step 3 - goto that folder.
+         cd foldername.
+   step 4 - build docker using 
+       docker build -t node . (paste as it is with dot)
+   step 5 - run docker system using
+       docker run -i -t node:latest
+```
+
 * after local setup and deploy project on Local browser.
   Copy DockerNodeJS project into Docker Config folder with the same Repository Name.
 
