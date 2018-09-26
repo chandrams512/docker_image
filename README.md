@@ -62,16 +62,16 @@ in container write
 ```
  After this command fill the value of AWS
 
-````
+```
  Access key
  Secret Access key
  Region
  Output file format
-```
+
 
 After the AWS configuration we can create new instance with this command
 
-```
+
  aws ec2 run-instances --image-id (imageid) --count 1 --instance-type (instance type) --key-name (keypair name)
-```
+
 In AWS site a new instance is created
