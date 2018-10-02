@@ -1,0 +1,32 @@
+After running Docker image,we have to go inside Dockernodejs folder
+
+and run these command step by step
+
+```
+npm install -g bower  
+
+npm install   
+
+bower install --allow-root
+
+service postgresql start
+
+sudo -u postgres psql
+
+ALTER USER postgres PASSWORD 'root';
+
+CREATE TABLE scl_user(user_id serial PRIMARY KEY,username VARCHAR (50) UNIQUE NOT NULL,password VARCHAR (50) NOT NULL,email VARCHAR (355) UNIQUE NOT NULL,mobile_no VARCHAR (15) NOT NULL,created_on TIMESTAMP,updated_by TIMESTAMP,last_login TIMESTAMP);
+
+```
+and after these command ,the final command 
+
+```
+
+node server.js
+
+```
+
+After this you have to go browser and see your application is running with command
+
+127.0.0.1:8080
+
