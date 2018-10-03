@@ -13,7 +13,7 @@ RUN apt-get dist-upgrade -y
 RUN apt-get install --yes sudo wget tar curl htop git zip nano ncdu build-essential chrpath libssl-dev libxft-dev pkg-config glib2.0-dev libexpat1-dev gobject-introspection python-gi-dev
 
 #Install GIT
-apt-get install git-core
+RUN apt-get install git-core
 
 #Install Java
 RUN apt-get install -y openjdk-8-jdk
