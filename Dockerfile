@@ -2,9 +2,9 @@ FROM ubuntu:16.04
 
 WORKDIR /ROOT
 
-RUN export LANGUAGE="en_US.UTF-8"
-RUN echo 'LANGUAGE="en_US.UTF-8"' >> /etc/default/locale
-RUN echo 'LC_ALL="en_US.UTF-8"' >> /etc/default/locale
+#RUN export LANGUAGE="en_US.UTF-8"
+#RUN echo 'LANGUAGE="en_US.UTF-8"' >> /etc/default/locale
+#RUN echo 'LC_ALL="en_US.UTF-8"' >> /etc/default/locale
 
 RUN apt-get autoclean
 RUN apt-get update
@@ -53,8 +53,8 @@ RUN npm i -g nodemon
 RUN nodemon -v
 
 #Install Postgres
-RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys B97B0AFCAA1A47F044F244A07FCC7D46ACCC4CF8
-RUN echo "deb http://apt.postgresql.org/pub/repos/apt/ precise-pgdg main" > /etc/apt/sources.list.d/pgdg.list
+#RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys B97B0AFCAA1A47F044F244A07FCC7D46ACCC4CF8
+#RUN echo "deb http://apt.postgresql.org/pub/repos/apt/ precise-pgdg main" > /etc/apt/sources.list.d/pgdg.list
 
 RUN apt-get update && apt-get -y -q install python-software-properties software-properties-common
 RUN apt-get -y install postgresql postgresql-client postgresql-contrib
