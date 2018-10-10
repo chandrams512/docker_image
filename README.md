@@ -35,7 +35,7 @@ Create folder in root and paste dockerfile and  config folder of docker system.
    step 3 - build docker using 
        docker build -t node . (paste as it is with dot)
    step 4 - run docker system using
-       docker run -i -t node:latest
+       docker run -i -t -p 127.0.0.1:3000:3000 node:latest
 ```
 
 After successful creation of container,write these command in container
@@ -45,16 +45,26 @@ After successful creation of container,write these command in container
  step 2- apt-get install sudo.
  step 3- sudo -u postgres psql.
  step 4- ALTER USER postgres PASSWORD 'root';
+ step 5- CREATE TABLE scl_user(
+        user_id serial PRIMARY KEY,
+        username text NOT NULL,
+        password text NOT NULL,
+        email text NOT NULL,
+        mobile_no text NOT NULL,
+        created_on date,
+        updated_by date,
+        last_login date,
+        login_attempts integer);
  step 5- 'ctrl+d' for exit from postgres database cmd.
  keep database name postgres in all place
 ```
 
 * Start the node project
 ```
-  node server.js
+  npm start
 ```
 
-* Browse to **http://localhost:3090**
+* Browse to **http://127.0.0.1:3000**
 
 
 *For create instance in AWS
