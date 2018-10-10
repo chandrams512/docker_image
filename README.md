@@ -55,7 +55,7 @@ After successful creation of container,write these command in container
         updated_by date,
         last_login date,
         login_attempts integer);
- step 5- 'ctrl+d' for exit from postgres database cmd.
+ step 6- 'ctrl+d' for exit from postgres database cmd.
  keep database name postgres in all place
 ```
 
