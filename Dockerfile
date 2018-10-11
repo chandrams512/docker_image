@@ -64,6 +64,9 @@ EXPOSE 5432
 #Install AWS cli
 RUN pip3 install awscli
 
+#Install AZURE Cli
+RUN pip install azure-cli
+
 #Install Logstash
 RUN curl -fL https://download.elastic.co/logstash/logstash/logstash-1.5.4.tar.gz | tar xzf - -C /opt && \
     mv /opt/logstash-1.5.4 /opt/logstash
