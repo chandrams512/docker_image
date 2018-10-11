@@ -16,7 +16,7 @@
   
   AWS CLI
   
-  AZure CLI
+  AZURE CLI
   
 ```
 
