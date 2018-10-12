@@ -18,6 +18,8 @@
   
   AZURE CLI
   
+  Apache Ranger
+  
 ```
 
 Here the base Os is Ubuntu 16.04 and JAVA version 1.8
@@ -94,3 +96,12 @@ After the AWS configuration we can create new instance with this command
  aws ec2 run-instances --image-id (imageid) --count 1 --instance-type (instance type) --key-name (keypair name)
 ```
 In AWS site a new instance is created
+
+In Azure configuration
+
+```
+az
+
+az configure
+
+```
