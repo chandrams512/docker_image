@@ -2,9 +2,6 @@ FROM ubuntu:16.04
 
 WORKDIR /ROOT
 
-#RUN export LANGUAGE="en_US.UTF-8"
-#RUN echo 'LANGUAGE="en_US.UTF-8"' >> /etc/default/locale
-#RUN echo 'LC_ALL="en_US.UTF-8"' >> /etc/default/locale
 
 RUN apt-get autoclean
 RUN apt-get update
@@ -53,8 +50,6 @@ RUN npm i -g nodemon
 RUN nodemon -v
 
 #Install Postgres
-#RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys B97B0AFCAA1A47F044F244A07FCC7D46ACCC4CF8
-#RUN echo "deb http://apt.postgresql.org/pub/repos/apt/ precise-pgdg main" > /etc/apt/sources.list.d/pgdg.list
 
 RUN apt-get update && apt-get -y -q install python-software-properties software-properties-common
 RUN apt-get -y install postgresql postgresql-client postgresql-contrib
@@ -72,3 +67,32 @@ RUN curl -fL https://download.elastic.co/logstash/logstash/logstash-1.5.4.tar.gz
     mv /opt/logstash-1.5.4 /opt/logstash
 
 ENV PATH /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/logstash/bin
+
+
+#Install Ranger
+#Install Maven 3.3.0+
+RUN mkdir -p /opt/maven
+WORKDIR /opt/maven
+RUN wget http://download.nextag.com/apache/maven/maven-3/3.3.9/binaries/apache-maven-3.3.9-bin.tar.gz
+RUN tar -xvzf /opt/maven/apache-maven-3.3.9-bin.tar.gz
+RUN rm -rf /opt/maven/apache-maven-3.3.9-bin.tar.gz
+
+ENV M2_HOME /opt/maven/apache-maven-3.3.9
+ENV MAVEN_OPTS -Xmx2048m
+ENV PATH $PATH:$JAVA_HOME/bin:$M2_HOME/bin
+
+
+# SSH key
+RUN ssh-keygen -f /root/.ssh/id_rsa -t rsa -N ''
+RUN cat /root/.ssh/id_rsa.pub > /root/.ssh/authorized_keys
+RUN chmod 600 /root/.ssh/authorized_keys
+#RUN sed -ri 's/UsePAM yes/UsePAM no/g' /etc/ssh/sshd_config
+
+
+RUN git clone https://github.com/apache/incubator-ranger
+
+#RUN mvn dependency:resolve
+
+WORKDIR /ROOT
+
+
