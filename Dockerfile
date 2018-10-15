@@ -73,7 +73,8 @@ ENV PATH /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/logst
 #Install Maven 3.3.0+
 RUN mkdir -p /opt/maven
 WORKDIR /opt/maven
-RUN wget http://download.nextag.com/apache/maven/maven-3/3.3.9/binaries/apache-maven-3.3.9-bin.tar.gz
+#RUN wget http://download.nextag.com/apache/maven/maven-3/3.3.9/binaries/apache-maven-3.3.9-bin.tar.gz
+RUN wget https://repo.maven.apache.org/maven2/org/apache/maven/apache-maven/3.3.9/apache-maven-3.3.9-bin.tar.gz
 RUN tar -xvzf /opt/maven/apache-maven-3.3.9-bin.tar.gz
 RUN rm -rf /opt/maven/apache-maven-3.3.9-bin.tar.gz
 
