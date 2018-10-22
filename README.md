@@ -126,7 +126,7 @@ paste the output in Terminal
 now Build the image in docker with Repository name which created in ECS
 
 docker build repostiryname .
-docker tag repostiryname:latest Repository URI/repostiryname:latest
-docker push Repository URI/repostiryname:latest
+docker tag repostiryname:latest Repository URl/repostiryname:latest
+docker push Repository URl/repostiryname:latest
 ```
 In your repository Docker image will save 
