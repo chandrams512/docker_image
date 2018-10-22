@@ -113,7 +113,7 @@ Push the Docker image in Amazon ECS
 ```
 Create a Repository in ECS and give the User full access to ECS
 
-Run theese command
+Run these command
 
 aws configure
 
