@@ -107,3 +107,26 @@ az
 az configure
 
 ```
+
+Push the Docker image in Amazon ECS
+
+```
+Atfirst Create a Repository in ECS and give the User full access to ECS
+
+Run theese command
+
+aws configure
+
+aws ecr get-login 
+
+you will receive some output with starting docker login
+
+paste the output in Terminal
+ 
+now Build the image in docker with Repository name which created in ECS
+
+docker build repostiryname .
+docker tag repostiryname:latest Repository URI/repostiryname:latest
+docker push Repository URI/repostiryname:latest
+```
+In your repository Docker image will save 
